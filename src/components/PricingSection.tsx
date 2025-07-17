@@ -220,7 +220,7 @@ export default function PricingSection() {
               exit={{ opacity: 0, x: 40 }}
               transition={{ duration: 0.5 }}
             >
-              <h4 className="text-lg font-semibold text-white mb-4">What's included</h4>
+              <h4 className="text-lg font-semibold text-white mb-4">What&apos;s included</h4>
               <div className="space-y-3">
                 {currentPackage.features.map((feature, index) => (
                   <motion.div
