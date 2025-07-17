@@ -144,7 +144,7 @@ export default function ClientTestimonials() {
               </div>
 
               {/* Quote mark */}
-              <div className="text-4xl text-white/20 mb-4">"</div>
+              <div className="text-4xl text-white/20 mb-4">&quot;</div>
 
               {/* Testimonial text */}
               <p className="text-white/80 text-sm leading-relaxed">
@@ -156,9 +156,8 @@ export default function ClientTestimonials() {
 
         {/* Scroll indicators */}
         <div className="flex justify-center mt-8 gap-2">
-          {testimonials.map((_, index) => (
+          {testimonials.map((_) => (
             <div
-              key={index}
               className="w-2 h-2 rounded-full bg-white/30 transition-colors duration-300"
             />
           ))}
