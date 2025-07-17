@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const packages = [
   {
@@ -62,11 +62,10 @@ const packages = [
 function AnimatedNumber({ value }: { value: number }) {
   const [display, setDisplay] = useState(value);
   useEffect(() => {
-    let start = display;
-    let end = value;
+    const start = display;
+    const end = value;
     if (start === end) return;
     let frame: number;
-    const duration = 0.7; // seconds
     const steps = 30;
     let currentStep = 0;
     function animate() {
@@ -210,7 +209,7 @@ export default function PricingSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
               >
-                Let's Work Together →
+                Let&apos;s Work Together &rarr;
               </motion.button>
             </div>
 
