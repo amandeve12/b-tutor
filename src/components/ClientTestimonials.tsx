@@ -45,7 +45,7 @@ export default function ClientTestimonials() {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
   const [isScrolling, setIsScrolling] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // Removed unused currentIndex state
   const [inView, setInView] = useState(false);
 
   // Intersection Observer to detect if section is in viewport
@@ -79,27 +79,6 @@ export default function ClientTestimonials() {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
   }, []);
-
-  // Auto-scroll logic (only when inView)
-  useEffect(() => {
-    if (!inView || isScrolling) return;
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    autoScrollRef.current = setInterval(() => {
-      setCurrentIndex((prev) => {
-        const next = (prev + 1) % testimonials.length;
-        const card = scrollContainer.children[next] as HTMLElement;
-        if (card) {
-          card.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
-        }
-        return next;
-      });
-    }, 3500);
-    return () => {
-      if (autoScrollRef.current) clearInterval(autoScrollRef.current);
-    };
-  }, [inView, isScrolling]);
 
   return (
     <section ref={sectionRef} className="w-full max-w-6xl mx-auto py-16 px-2 sm:px-4">
@@ -156,8 +135,9 @@ export default function ClientTestimonials() {
 
         {/* Scroll indicators */}
         <div className="flex justify-center mt-8 gap-2">
-          {testimonials.map((_) => (
+          {testimonials.map((testimonial) => (
             <div
+              key={testimonial.id}
               className="w-2 h-2 rounded-full bg-white/30 transition-colors duration-300"
             />
           ))}
