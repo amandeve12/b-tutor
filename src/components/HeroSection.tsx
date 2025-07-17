@@ -15,10 +15,6 @@ const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
 };
-const fade = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { duration: 0.7 } },
-};
 
 export default function HeroSection() {
   // Typewriter effect for subheading
