@@ -36,7 +36,7 @@ export default function VirtualConsultations() {
           {/* Patient Query */}
           <div className="bg-[#18181b] rounded-lg p-4 mb-4">
             <p className="text-white text-sm">
-              &quot;I&apos;m experiencing chest pain and shortness of breath when I exercise. Could this be related to my heart condition?&quot;
+              "I'm experiencing chest pain and shortness of breath when I exercise. Could this be related to my heart condition?"
             </p>
           </div>
 
